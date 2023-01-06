@@ -3,7 +3,7 @@ import axios from 'axios'
 export const loadPokemons = async () => {
   var pokemons = []
 
-  const pokeApi = await axios.get('https://pokeapi.co/api/v2/pokemon/?limit=1154')
+  const pokeApi = await axios.get('https://pokeapi.co/api/v2/pokemon/?limit=151')
   
   for(let i=0; i<pokeApi.data.results.length; i++) {
     var pokemon = await axios.get(pokeApi.data.results[i].url)

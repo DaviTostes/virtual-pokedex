@@ -3,3 +3,46 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.pokeCard {
+  background-color: rgb(193, 0, 0);
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: transform 400ms ease-in-out;
+
+  box-shadow: 0 0 10px #aaa;
+  border-radius: 10px;
+
+  padding: 20px;
+}
+
+.pokeCard:hover {
+  transform: scale(2);
+}
+
+.pokeCard img {
+  background-color: aliceblue;
+
+  border-radius: 10px;
+}
+
+.types {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pokeCard p {
+  margin: 0 5px;
+
+  color: aliceblue;
+}
+
+.pokeCard .name {
+  font-size: 18px;
+}

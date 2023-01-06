@@ -6,7 +6,8 @@ import { loadPokemons } from './utils/loadPokemons'
 
 class App extends Component {
   state = {
-    pokedex: []
+    pokedex: [],
+    filter: ''
   }
 
   async componentDidMount() {
@@ -16,7 +17,7 @@ class App extends Component {
   }
 
   render() {
-    const { pokedex } = this.state
+    const { pokedex, filter } = this.state
 
     return (
       <div className="App">

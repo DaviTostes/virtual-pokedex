@@ -2,10 +2,14 @@ import './styles.css'
 
 const PokeCard = (props) => {
   return (
-    <div className="PokeCard">
+    <div className="pokeCard">
       <img src={props.img} alt="" />
       <p className="name">{props.name}</p>
-      <p className="type">{props.type}</p>
+      <div className="types"> 
+      {
+        props.types.map(type => <p>{type}</p>)
+      } 
+      </div>
     </div>
   )
 }
