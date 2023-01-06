@@ -5,7 +5,7 @@
 }
 
 .input-wrapper {
-  width: 40vw;
+  width: 80vw;
   height: 20%;
 
   position: absolute;
@@ -36,16 +36,10 @@ input.filter:focus {
 }
 
 .pokedex-wrapper {
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translate(-50%, 0);
+  background-color: aqua;
 
-  
-  width: 60vw;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(autofill, minmax(280px, 1fr));
+  gap: 30px;
 }
 
