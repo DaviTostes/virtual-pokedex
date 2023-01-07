@@ -16,24 +16,42 @@ class App extends Component {
     this.setState({ pokedex: await loadPokemons() })
   }
 
+  componentDidUpdate() {
+    const { pokedex, filter } = this.state
+
+    for(let i=0; i<pokedex.length; i++) {
+      var poke = document.querySelector(`#poke${pokedex[i].id}`)
+      if(filter != '') {
+        if(pokedex[i].name.includes(filter)) {
+          poke.style.display = 'block'
+        } else {
+          poke.style.display = 'none'
+        }
+      } else {
+        poke.style.display = 'block'
+      }
+    }
+  }
+
   render() {
     const { pokedex, filter } = this.state
 
     return (
       <div className="App">
         <div className="input-wrapper">
-          <input type="text" className='filter' id='filter' placeholder='Filter'/>
+          <input type="text" className='filter' id='filter' placeholder='Filter' onChange={e => this.setState({ filter: e.target.value })}/>
         </div>
         <div className="pokedex-wrapper">
           {
             pokedex.map(pokemon => {
               return (
-                <PokeCard
-                key={pokemon.id}
-                name={pokemon.name}
-                types={pokemon.types}
-                img={pokemon.img}
-                />
+                <div className="pokecard" key={pokemon.id} id={`poke${pokemon.id}`}>
+                  <PokeCard
+                    name={pokemon.name}
+                    types={pokemon.types}
+                    img={pokemon.img}
+                  />
+                </div>
               )
             })
           }

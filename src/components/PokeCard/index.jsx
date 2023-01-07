@@ -7,7 +7,7 @@ const PokeCard = (props) => {
       <p className="name">{props.name}</p>
       <div className="types"> 
       {
-        props.types.map(type => <p>{type}</p>)
+        props.types.map((type, index) => <p key={index}>{type}</p>)
       } 
       </div>
     </div>

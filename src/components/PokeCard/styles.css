@@ -5,8 +5,9 @@
 }
 
 .pokeCard {
-  background-color: rgb(193, 0, 0);
+  background-color: rgb(136, 0, 0);
   height: 200px;
+  max-width: 140px;
 
   display: flex;
   flex-direction: column;
@@ -19,10 +20,15 @@
   border-radius: 10px;
 
   padding: 20px;
+  margin-bottom: 10px;
 }
 
 .pokeCard:hover {
-  transform: scale(2);
+  transform: scale(1.4);
+}
+
+.pokeCard:hover .pokeCard:not(:hover) {
+  transform: scale(0.6);
 }
 
 .pokeCard img {
