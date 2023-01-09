@@ -15,7 +15,7 @@ class App extends Component {
 
     for(let i=1; i<1154; i++) {
       var pokemon = await loadPokemons(i)
-      var result = pokemon.find(poke => poke.name === pokemon.name)
+      var result = pokedex.find(poke => poke.name === pokemon.name)
       if(result === undefined) {
         pokedex.push(pokemon)
         this.setState({ pokedex })
@@ -29,7 +29,7 @@ class App extends Component {
     for(let i=0; i<pokedex.length; i++) {
       var poke = document.querySelector(`#poke${pokedex[i].id}`)
       if(filter != '') {
-        if(pokedex[i].name.includes(filter)) {
+        if(pokedex[i].name.toLowerCase().includes(filter.toLowerCase())) {
           poke.style.display = 'block'
         } else {
           poke.style.display = 'none'
