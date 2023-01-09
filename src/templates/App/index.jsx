@@ -15,7 +15,7 @@ class App extends Component {
 
     for(let i=1; i<1154; i++) {
       var pokemon = await loadPokemons(i)
-      var result = pokedex.find(poke => poke.name === pokemon.name)
+      var result = pokemon.find(poke => poke.name === pokemon.name)
       if(result === undefined) {
         pokedex.push(pokemon)
         this.setState({ pokedex })
