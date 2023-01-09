@@ -1,8 +1,8 @@
-import './App.css'
+import './styles.css'
 import axios from 'axios'
 import { Component, useEffect, useState } from 'react'
-import PokeCard from './components/PokeCard'
-import { loadPokemons } from './utils/loadPokemons'
+import PokeCard from '../../components/PokeCard'
+import { loadPokemons } from '../../utils/loadPokemons'
 
 class App extends Component {
   state = {
